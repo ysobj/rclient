@@ -6,6 +6,7 @@
     "build": "gulp javascript"
   },
   "dependencies": {
+    "axios": "^0.9.1",
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.1",
     "react": "^0.14.7",
