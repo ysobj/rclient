@@ -16,8 +16,9 @@ var Message = React.createClass({
       <div>
         <div className="message-container">
           <div className="avatar"><img alt="avatar" src='http://www.gravatar.com/avatar/13f5b1351a04db4c83e60fcf7fb6d6ae?rating=PG&size=50&default=wavatar'/></div>
-          <div className="comment-info"><div>ysobj</div>3/11 12:40</div></div>
-        <div>{data.contents}</div>
+          <div className="comment-info"><span>ysobj</span><span>{data.regDate}</span></div>
+          <div>{data.contents}</div>
+        </div>
       </div>
                     );
                 }
