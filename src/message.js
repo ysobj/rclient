@@ -1,6 +1,7 @@
 "use strict";
 var React = require("react");
 var axios = require("axios");
+var CommentForm = require("./commentForm");
 var Message = React.createClass({
   getInitialState: function() {
     return {
@@ -24,6 +25,7 @@ var Message = React.createClass({
                 }
     return <div>
       {this.state.comments.map(renderMessage, this)}
+      <CommentForm />
     </div>;
   },
   componentDidMount: function() {
