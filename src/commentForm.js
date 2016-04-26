@@ -5,14 +5,13 @@ var axios = require("axios");
 var CommentForm = React.createClass({
   handleClickSend: function() {
     var comment = ReactDom.findDOMNode(this.refs.comment).value;
-    console.log("onClick!(CommentForm)", comment);
     axios.post("/api/comments/",{
       contents: comment,
       regDate: new Date(),
       userId: 1
     }).then(function(response){
-      console.log(response);
-    });
+      this.props.refresh()
+    }.bind(this));
   },
   render: function(){
     return <form className="form-horizontal" action="../users">

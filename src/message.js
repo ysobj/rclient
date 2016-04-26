@@ -8,6 +8,12 @@ var Message = React.createClass({
       comments: []
     };
   },
+  findComments: function(){
+    console.log('findComments');
+    axios.get("/api/comments/").then(function(res){
+      this.setState({comments: res.data});
+    }.bind(this));
+  },
   render: function() {
         var renderMessage = function(data) {
           if(data == null){
@@ -25,13 +31,11 @@ var Message = React.createClass({
                 }
     return <div>
       {this.state.comments.map(renderMessage, this)}
-      <CommentForm />
+      <CommentForm refresh={this.findComments} />
     </div>;
   },
   componentDidMount: function() {
-    axios.get("/api/comments/").then(function(res){
-      this.setState({comments: res.data});
-    }.bind(this));
+    this.findComments();
   }
 });
 module.exports = Message;
