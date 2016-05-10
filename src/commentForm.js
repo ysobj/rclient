@@ -5,6 +5,8 @@ var axios = require("axios");
 var CommentForm = React.createClass({
   handleClickSend: function() {
     var comment = ReactDom.findDOMNode(this.refs.comment).value;
+    socket.emit('chat message',comment);
+    /*
     axios.post("/api/comments/",{
       contents: comment,
       regDate: new Date(),
@@ -12,6 +14,7 @@ var CommentForm = React.createClass({
     }).then(function(response){
       this.props.refresh()
     }.bind(this));
+    */
   },
   render: function(){
     return <form className="form-horizontal" action="../users">
