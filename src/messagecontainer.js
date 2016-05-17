@@ -29,6 +29,7 @@ var MessageContainer = React.createClass({
   },
   componentDidMount: function() {
     this.findComments();
+    socket.on('receiveMessage',this.findComments.bind(this));
   }
 });
 module.exports = MessageContainer;

@@ -5,7 +5,7 @@ var axios = require("axios");
 var CommentForm = React.createClass({
   handleClickSend: function() {
     var comment = ReactDom.findDOMNode(this.refs.comment).value;
-    socket.emit('chat message',comment);
+    socket.emit('message',comment);
     /*
     axios.post("/api/comments/",{
       contents: comment,
